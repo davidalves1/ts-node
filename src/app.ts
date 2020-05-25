@@ -8,7 +8,7 @@ mongoose.Promise = global.Promise
 
 class App {
     public server: express.Application
-    private readonly mongoUrl = 'mongodb://mongo:27017/tripyou'
+    private readonly mongoUrl = process.env.DB_PATH || ''
 
     public constructor () {
       this.server = express()
